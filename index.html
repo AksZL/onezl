@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>...正在加载中...</title>
+    <meta name="referrer" content="no-referrer" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <script src="https://s1.pstatp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+    body,
+    html {
+        width: 100%;
+        height: 100%
+    }
+ 
+    * {
+        margin: 0;
+        padding: 0
+    }
+</style>
+</head>
+<body>
+</body>
+    <script>
+    const url = window.document.location.href.toString();
+    let turl = url.substring(url.indexOf("=") + 1);
+    // 获取UA
+    var ua = navigator.userAgent.toString();
+// 判断是否在腾讯或字节等内置浏览器
+if(ua.indexOf("MicroMessenger/") !== -1 || ua.indexOf("QQ/")!== -1 || ua.indexOf("Kwai/") !==-1 || ua.indexOf("BytedanceWebview/")!== -1) {
+                        
+                        $("title").text("安柯云数据");
+                         $("body").html('<iframe src="' + turl + '" width="100%" height="' + (($(window).height()) - 5) + "px" + '" style="border: 0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>');
+                    }else{window.location.href = turl;}
+    </script>
+<!-- 短链接技术咨询＋3122683591 -->
+</html>
