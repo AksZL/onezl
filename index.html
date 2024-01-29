@@ -24,6 +24,9 @@
     <script>
     const url = window.document.location.href.toString();
     let turl = url.substring(url.indexOf("=") + 1);
+    if (!turl || turl.length < 5 || !turl.startsWith("http")) {
+            window.location.href = "https://www.idcak.com";
+        } else {
     // 获取UA
     var ua = navigator.userAgent.toString();
 // 判断是否在腾讯或字节等内置浏览器
@@ -31,7 +34,7 @@ if(ua.indexOf("MicroMessenger/") !== -1 || ua.indexOf("QQ/")!== -1 || ua.indexOf
                         
                         $("title").text("安柯云数据");
                          $("body").html('<iframe src="' + turl + '" width="100%" height="' + (($(window).height()) - 5) + "px" + '" style="border: 0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>');
-                    }else{window.location.href = turl;}
+                    }else{window.location.href = turl;}}
     </script>
 <!-- 短链接技术咨询＋3122683591 -->
 </html>
