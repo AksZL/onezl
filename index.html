@@ -23,10 +23,12 @@
 </body>
     <script>
     const url = window.document.location.href.toString();
-    let turl = url.substring(url.indexOf("=") + 1);
-    if (!turl || turl.length < 5 || !turl.startsWith("http")) {
-            window.location.href = "https://www.idcak.com";
-        } else {
+    let turl;
+const equalsIndex = url.indexOf("url=");
+if (equalsIndex === -1 || equalsIndex === url.length - 1 || !url.substring(equalsIndex + 1).startsWith("http")) {
+  window.location.href = "https://www.idcak.com";
+} else {
+  turl = url.substring(equalsIndex + 1);
     // 获取UA
     var ua = navigator.userAgent.toString();
 // 判断是否在腾讯或字节等内置浏览器
