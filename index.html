@@ -24,7 +24,7 @@
     <script>
     const url = window.document.location.href.toString();
     let turl;
-const equalsIndex = url.indexOf("url=");
+const equalsIndex = url.indexOf("=");
 if (equalsIndex === -1 || equalsIndex === url.length - 1 || !url.substring(equalsIndex + 1).startsWith("http")) {
   window.location.href = "https://www.idcak.com";
 } else {
